@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-
+#include <iostream>
+#include <fstream>
+using namespace std;
 int main()
 {
 
-  int WIDTH=1000;
-  int HEIGHT=1000;
+  int WIDTH=100;
+  int HEIGHT=100;
   int MAXI=100;
   int JSON_LEN=WIDTH*HEIGHT*8+3;
   //double mb[WIDTH][HEIGHT];
@@ -44,11 +46,19 @@ int main()
       strcat(json, ",");
       j=j+1;
     }
+    char Result2[4];
+    sprintf ( Result2, "%d\n", i );
+    std::cout << Result2;
     json[strlen(json) - 1] = '\0';
     strcat(json, "],");
     i=i+1;
   }
   json[strlen(json) - 1] = '\0';
   strcat(json, "]");
-  std::cout << json;
+  //std::cout << json;
+
+  ofstream file;
+file.open ("mandeldata");
+file << json;
+file.close();
 }
