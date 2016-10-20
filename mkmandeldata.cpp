@@ -57,8 +57,15 @@ int main()
   strcat(json, "]");
   //std::cout << json;
 
-  ofstream file;
-file.open ("mandeldata");
-file << json;
-file.close();
+    FILE * pFile;
+    pFile = fopen ("mandeldata","w");
+    if (pFile!=NULL)
+    {
+      fputs (json,pFile);
+      fclose (pFile);
+    }
+  //ofstream file;
+//file.open ("mandeldata");
+//file << json;
+//file.close();
 }
