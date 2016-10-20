@@ -1,9 +1,9 @@
 import numpy
 import json
 
-MAXI=100
-WIDTH=100
-HEIGHT=100
+MAXI=1024
+WIDTH=4000
+HEIGHT=4000
 mb=numpy.zeros([WIDTH,HEIGHT])
 for i in range(WIDTH):
 	for j in range(HEIGHT):
@@ -21,5 +21,8 @@ for i in range(WIDTH):
 		if res<4:
 			mb[i][j]=-1
 		else:
-			mb[i][j]=inter 
-print json.dumps(mb.tolist())
+			mb[i][j]=inter
+	print i
+f=open("mandeldata","w")
+f.write(json.dumps(mb.tolist()))
+f.close()
