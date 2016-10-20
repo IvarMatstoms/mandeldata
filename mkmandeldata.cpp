@@ -9,7 +9,7 @@ int main()
   int HEIGHT=1000;
   int MAXI=100;
   int JSON_LEN=WIDTH*HEIGHT*8+3;
-  double mb[WIDTH][HEIGHT];
+  //double mb[WIDTH][HEIGHT];
   char json [JSON_LEN];
   strcat(json, "[");
   int i=0;
