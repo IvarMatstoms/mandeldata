@@ -34,12 +34,12 @@ def newThread(thid):
 	global HEIGHT
 	global threads
 	global threadsdone
-	if(i<WIDTH):
+	if(i<WIDTH-1):
 		t = threading.Thread(target=calc, args = [i+1,thid])
 		i=i+1
 		t.start()
 	else:
-		if(threadsdone==WIDTH):
+		if(threadsdone==WIDTH-1):
 			saveMB()
 
 
@@ -50,8 +50,8 @@ def saveMB():
 	f.close()
 threads=[]
 MAXI=1024
-WIDTH=4000
-HEIGHT=4000
+WIDTH=100
+HEIGHT=100
 CORES=8
 threadsdone=0
 mb=numpy.zeros([WIDTH,HEIGHT])
