@@ -25,7 +25,6 @@ def calc(x,thid):
 			else:
 				mb[x][y]=inter
 	threadsdone+=1
-	i=i+1
 	print str(thid)+":"+str(x)
 	newThread(thid)
 
@@ -36,7 +35,8 @@ def newThread(thid):
 	global threads
 	global threadsdone
 	if(i<WIDTH):
-		t = threading.Thread(target=calc, args = [i,thid])
+		t = threading.Thread(target=calc, args = [i+1,thid])
+		i=i+1
 		t.start()
 	else:
 		if(threadsdone==WIDTH):
@@ -50,9 +50,9 @@ def saveMB():
 	f.close()
 threads=[]
 MAXI=1024
-WIDTH=1000
-HEIGHT=1000
-CORES=4
+WIDTH=4000
+HEIGHT=4000
+CORES=8
 threadsdone=0
 mb=numpy.zeros([WIDTH,HEIGHT])
 i=0;
