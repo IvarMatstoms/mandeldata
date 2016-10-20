@@ -2,8 +2,8 @@ import numpy
 import json
 
 MAXI=1024
-WIDTH=4000
-HEIGHT=4000
+WIDTH=100
+HEIGHT=100
 mb=numpy.zeros([WIDTH,HEIGHT])
 for i in range(WIDTH):
 	for j in range(HEIGHT):

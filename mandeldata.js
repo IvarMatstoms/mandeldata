@@ -14,7 +14,10 @@ function update(){
         if(mb[i][j]==-1){
           color="#000";
         }else{
-          color="#fff";
+		  
+          //color="#fff";
+		 var red=Math.max((mb[i][j]/100)*255,255)
+		  color=rgbToHex(red,255,0)
         }
         canvas.fillStyle = color
         canvas.fillRect(i,j,1,1)
@@ -24,4 +27,12 @@ function update(){
     }
 
   })
+}
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
