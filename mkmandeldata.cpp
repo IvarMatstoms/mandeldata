@@ -1,14 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include <iostream>     // std::cout
-#include <sstream>
-#include <iomanip>
-#include <locale>
 
-#include <ios>
-#include <ostream>
-#include <iostream>
 int main()
 {
 
